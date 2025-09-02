@@ -1,4 +1,4 @@
-const { BrowserWindow, app } = require('electron')
+const { BrowserWindow, app , Menu } = require('electron')
 require('@electron/remote/main').initialize();
 
 function createWindow()
@@ -16,6 +16,8 @@ function createWindow()
 }
 
 app.on('ready', createWindow)
+
+Menu.setApplicationMenu(false)
 
 app.on('window-all-closed', () => {
     // if(process.app !== 'darwin')
